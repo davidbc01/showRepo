@@ -1,0 +1,16 @@
+:root {
+    --mainGreen: #149545;
+    --mainRed: #F0342B;
+    --mainOrange: #F68C34;
+    --mainBlack: #202020;
+    --mainWhite: #F4F4F4;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif !important;
+    background-color: var(--mainBlack) !important;
+}
+
+header {
+    background-color: var(--mainWhite);
+}

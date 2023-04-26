@@ -1,61 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-ES">
 <head>
-    <title>Popup con Formulario - Bootstrap</title>
-    <!-- Incluye los estilos de Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            background-color: #202020;
-        }
-        /* Estilo personalizado para centrar el botón */
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="icon" href="./resources/logoP.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Archivos CSS de Bootstrap -->
+  <title>Ni Pincha Ni Corta</title>
 </head>
 <body>
-    <div class="btn-container">
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#miModal">Abrir Popup</button>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal" id="miModal">
-        <!-- Código del modal con el formulario -->
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Formulario</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <!-- Agrega aquí tus campos de formulario -->
-                        <div class="form-group">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
+  <header>
+    <!--Barra de Navegación-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light>
+      <a class="navbar-brand" href="./index.html">
+        <img src="./resources/logoP.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
+        &nbsp; Ni Pincha Ni Corta
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      &nbsp;
+      &nbsp;
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active href="#">Carta</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn btn-outline-warning" data-toggle="modal" data-target="#crearCuenta">Crear Cuenta</button>
+            <button class="btn btn-outline-success" data-toggle="modal" data-target="#iniciarSesion">Iniciar Sesión</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--Modal Crear Cuenta-->
+  <div class="modal" id="crearCuenta">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Crear Cuenta</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="email">Dirección</label>
+              <input type="text" class="form-control" id="address">
+            </div>
+            <div class="form-group">
+              <label for="email">Teléfono</label>
+              <input type="text" class="form-control" id="phone">
+            </div>
+            <button type="submit" class="btn btn-warning">Enviar</button>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
+  <!--Modal Iniciar Sesion-->
+  <div class="modal" id="iniciarSesion">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Iniciar Sesión</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenedor de la Carta-->
+  <div class="container">
+    <h2>Nuestra Carta</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Nombre del plato</h5>
+            <p class="card-text">Explicación, ingredientes...</p>
+            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Incluye los scripts de Bootstrap y jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <!-- Archivos JavaScript de Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.14/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
