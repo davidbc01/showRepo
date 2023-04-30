@@ -25,14 +25,24 @@
       &nbsp;
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link active href="#">Carta</a>
+          <li class="nav-item active dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              CARTA
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Entrantes</a>
+              <a class="dropdown-item" href="#">Carnes</a>
+              <a class="dropdown-item" href="#">Pescado</a>
+              <a class="dropdown-item" href="#">Postres</a>
+              <a class="dropdown-item" href="#">Bebidas</a>
+            </div>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item">
             <button class="btn btn-outline-warning" data-toggle="modal" data-target="#crearCuenta">Crear Cuenta</button>
             <button class="btn btn-outline-success" data-toggle="modal" data-target="#iniciarSesion">Iniciar Sesión</button>
+            <button class="btn btn-outline-info" data-toggle="modal" data-target="#cartModal">Ver Pedidos</button>
           </li>
         </ul>
       </div>
@@ -98,67 +108,195 @@
       </div>
     </div>
   </div>
-  <!--Contenedor de la Carta-->
+  <!--Modal Carrito Pedidos-->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <ul id="cartItemsList"></ul>
+          Total: <span id="cartTotalPrice"></span>
+        </div>                
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenedor de los Entrantes-->
   <div class="container">
-    <h2>Nuestra Carta</h2>
+    <h2>Entrantes</h2>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgCroquetas.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Croquetas Variadas</h5>
+            <p class="card-text">6 coquetas a elegir entre jamón serrano, setas y queso.</p>
+            <a href="#" class="btn btn-primary" data-item-price="6.57">Añadir al pedido - 6.57€</a>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgGambas.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Gambas al Ajillo</h5>
+            <p class="card-text">Nuestras gambas de huelva salteadas con ajos picados y guindillas.</p>
+            <a href="#" class="btn btn-primary" data-item-price="5.00">Añadir al pedido - 5.00€</a>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgEMixta.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Ensalada Mixta</h5>
+            <p class="card-text">Una de nuestras ensaladas con verduras de la huerta, lechuga, tomate, cebolla, pimientos y aceitunas.</p>
+            <a href="#" class="btn btn-primary" data-item-price="6.90">Añadir al pedido - 6.90€</a>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgPGallega.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Pulpo a la Gallega</h5>
+            <p class="card-text">Pulpo procedente de Galicia cocido y cortado en rodajas, aderezado con aceite de oliva, pimentón y sal gorda.</p>
+            <a href="#" class="btn btn-primary" data-item-price="5.00">Añadir al pedido - 5.00€</a>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgEVerde.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Ensalada Verde</h5>
+            <p class="card-text">La segunda de nuestras ensaladas esta vez con una mezcla de lechuga romana, escarola y rúcula, tomate, pepino, cebolla y atún.</p>
+            <a href="#" class="btn btn-primary" data-item-price="6.90">Añadir al pedido - 6.90€</a>
           </div>
         </div>
       </div>
       <div class="col mb-4">
         <div class="card h-100 align-items-center text-center">
-          <img src="" class="card-img-top" alt="Foto del plato">
+          <img src="./resources/imgEntremeses.jpg" class="card-img-top" alt="Foto del plato">
           <div class="card-body">
-            <h5 class="card-title">Nombre del plato</h5>
-            <p class="card-text">Explicación, ingredientes...</p>
-            <a href="#" class="btn btn-primary">Añadir al carrito</a>
+            <h5 class="card-title">Entremeses</h5>
+            <p class="card-text">Una selección de los mejores embutidos de España como el jamón, lomo, chorizo o salchichón</p>
+            <a href="#" class="btn btn-primary" data-item-price="4.50">Añadir al pedido - 4.50€</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenedor de las Carnes-->
+  <div class="container">
+    <h2>Carnes</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgSolomillo.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Solomillo de Cerdo</h5>
+            <p class="card-text">Una de las partes más tiernas y jugosas del cerdo, esta vez hecho a la plancha con una guarnición de patatas.</p>
+            <a href="#" class="btn btn-primary" data-item-price="14.57">Añadir al pedido - 14.57€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgPollo.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Pollo en Salsa de Champiñones</h5>
+            <p class="card-text">Nuestro pollo de corral cocinado en una salsa de champiñones frescos con cebolla, ajo y vino blanco.</p>
+            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgChuletas.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Chuletas de Cerdo</h5>
+            <p class="card-text">Para los amantes de la carne de cerdo, tenemos nuestras chuletas a la parrilla con salsa barbacoa.</p>
+            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenedor de los Pescados-->
+  <div class="container">
+    <h2>Pescados</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgBacalao.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Bacalao con Tomate</h5>
+            <p class="card-text">Nuestro bacalao hecho en una salsa de tomates maduros, orégano, laurel y pimienta negra.</p>
+            <a href="#" class="btn btn-primary" data-item-price="14.57">Añadir al pedido - 14.57€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgTartar.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Tartar de Atún</h5>
+            <p class="card-text">Nuestro atún de almadraba crudo y cortado en pequeños cubos mezclado con otros ingredientes como la cebolla, aguacate, cilantro, limón y salsa de soja.</p>
+            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgSalmon.webp" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Salmón al Horno</h5>
+            <p class="card-text">Un salmon cocinado al horno aderezado con hierbas frescas acompañado de limón, ajo y aceite de oliva.</p>
+            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Contenedor de los Postres-->
+  <div class="container">
+    <h2>Postres</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgHelados.webp" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Helados Variados</h5>
+            <p class="card-text">Una selección de helados de diferentes sabores a elegir entre chocolate, vainilla o de turrón.</p>
+            <a href="#" class="btn btn-primary" data-item-price="8.57">Añadir al pedido - 8.57€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgTarta.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Tarta de Chocolate</h5>
+            <p class="card-text">Si eres un amante del chocolate esta es tu tarta, con una base de galleta y una mezcla de chocolate negro de alta calidad y crema.</p>
+            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
+          </div>
+        </div>
+      </div>
+      <div class="col mb-4">
+        <div class="card h-100 align-items-center text-center">
+          <img src="./resources/imgSorbete.jpg" class="card-img-top" alt="Foto del plato">
+          <div class="card-body">
+            <h5 class="card-title">Sorbete de Limón</h5>
+            <p class="card-text">Nuestro último y refrescante postre con limones recién exprimidos con un poco de cava francés.</p>
+            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
           </div>
         </div>
       </div>
@@ -166,10 +304,13 @@
   </div>
 
 
+  
 
-  <!-- Archivos JavaScript de Bootstrap -->
+  <!--Script Archivos JavaScript de Bootstrap-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.14/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--Más Scripts-->
+  <script src="./javascript/carritoPedidos.js"></script>
 </body>
 </html>

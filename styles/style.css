@@ -14,3 +14,63 @@ body {
 header {
     background-color: var(--mainWhite);
 }
+
+.container > h2 {
+    color: var(--mainWhite);
+}
+
+.card > img {
+    width: 350px;
+    height: 250px;
+}
+
+#cartItemsList li {
+    margin-bottom: 10px;
+}
+
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) { /*Media Queries para portátiles*/
+    .card {
+        width: 280px;
+    }
+    .card > img {
+        width: 280px;
+        height: 210px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) { /*Media Queries para tablets*/
+    .card {
+        width: 300px;
+    }
+    .card > img {
+        width: 300px;
+        height: 210px;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 425px) { /*Media Queries para moviles L*/
+    .card {
+        width: 300px;
+    }
+    .card > img {
+        width: 300px;
+    }
+}
+
+@media (min-width: 321px)  and (max-width: 375px) { /*Media Queries para moviles M*/
+    .card {
+        width: 280px;
+    }
+    .card > img {
+        width: 280px;
+    }
+}
+
+@media (max-width: 320px) { /*Media Queries para moviles S*/
+    .card > img {
+        width: 290px;
+    }
+}
