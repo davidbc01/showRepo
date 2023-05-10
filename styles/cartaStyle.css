@@ -2,21 +2,21 @@
     --mainGreen: #149545;
     --mainRed: #F0342B;
     --mainOrange: #F68C34;
+    --mainYellow: #FFBD4A;
     --mainBlack: #202020;
     --mainWhite: #F4F4F4;
 }
 
 body {
     font-family: 'Signika Negative', sans-serif !important;
-    background-color: var(--mainBlack) !important;
 }
 
 header {
     background-color: var(--mainWhite);
 }
 
-.container > h2 {
-    color: var(--mainWhite);
+nav.navbar {
+    background-color: var(--mainYellow);
 }
 
 .card > img {
@@ -26,6 +26,17 @@ header {
 
 #cartItemsList li {
     margin-bottom: 10px;
+}
+
+/*Personalización del ScrollBar*/
+body::-webkit-scrollbar {
+    width: 15px; /*-Ancho de todo el scrollbar-*/
+}
+body::-webkit-scrollbar-track {
+    background: var(--mainBlack); /*-Color del fondo del scrollbar-*/
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--mainWhite); /*-Color del scrollbar en si-*/
 }
 
 
@@ -38,6 +49,16 @@ header {
     .card > img {
         width: 280px;
         height: 210px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { /*Media Queries para portátiles L*/
+    .card {
+        width: 305px;
+    }
+    .card > img {
+        width: 305px;
+        height: 230px;
     }
 }
 

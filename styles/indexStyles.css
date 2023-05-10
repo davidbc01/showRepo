@@ -1,0 +1,37 @@
+:root {
+    --mainGreen: #149545;
+    --mainRed: #F0342B;
+    --mainOrange: #F68C34;
+    --mainYellow: #FFBD4A;
+    --mainBlack: #202020;
+    --mainWhite: #F4F4F4;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif !important;
+}
+
+header {
+    background: url(../resources/Fondo1.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.titulo {
+    background-color: var(--mainGreen);
+    border: 1px solid var(--mainGreen);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+/*Personalización del ScrollBar*/
+body::-webkit-scrollbar {
+    width: 15px; /*-Ancho de todo el scrollbar-*/
+}
+body::-webkit-scrollbar-track {
+    background: var(--mainBlack); /*-Color del fondo del scrollbar-*/
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--mainWhite); /*-Color del scrollbar en si-*/
+}

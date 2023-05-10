@@ -1,316 +1,124 @@
 <!DOCTYPE html>
 <html lang="es-ES">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./styles/style.css">
-  <link rel="icon" href="./resources/logoP.ico">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Archivos CSS de Bootstrap -->
-  <title>Ni Pincha Ni Corta</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/indexStyles.css">
+    <link rel="icon" href="./resources/logoP.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Archivos CSS de Bootstrap -->
+    <title>¡Ni Pincha Ni Corta!</title>
 </head>
 <body>
-  <header>
-    <!--Barra de Navegación-->
-    <nav class="navbar navbar-expand-md navbar-light bg-light>
-      <a class="navbar-brand" href="./index.html">
-        <img src="./resources/logoP.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
-        &nbsp; Ni Pincha Ni Corta
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      &nbsp;
-      &nbsp;
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              CARTA
+    <header>
+        <!--Barra de Navegación-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+            <a class="navbar-brand d-flex align-items-center justify-content-center" href="./index.html">
+                <img src="./resources/logoP.png" alt="Logo" width="70" height="70" class="d-inline-block align-text-top" loading="lazy">
+                &nbsp;&nbsp;¡Ni Pincha Ni Corta!
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Entrantes</a>
-              <a class="dropdown-item" href="#">Carnes</a>
-              <a class="dropdown-item" href="#">Pescado</a>
-              <a class="dropdown-item" href="#">Postres</a>
-              <a class="dropdown-item" href="#">Bebidas</a>
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <button class="btn btn-outline-warning" data-toggle="modal" data-target="#crearCuenta">Crear Cuenta</button>
-            <button class="btn btn-outline-success" data-toggle="modal" data-target="#iniciarSesion">Iniciar Sesión</button>
-            <button class="btn btn-outline-info" data-toggle="modal" data-target="#cartModal">Ver Pedidos</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--Modal Crear Cuenta-->
-  <div class="modal" id="crearCuenta">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Crear Cuenta</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input type="text" class="form-control" id="name">
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" class="form-control" id="password">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-              <label for="email">Dirección</label>
-              <input type="text" class="form-control" id="address">
-            </div>
-            <div class="form-group">
-              <label for="email">Teléfono</label>
-              <input type="text" class="form-control" id="phone">
-            </div>
-            <button type="submit" class="btn btn-warning">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Modal Iniciar Sesion-->
-  <div class="modal" id="iniciarSesion">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Iniciar Sesión</h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input type="password" class="form-control" id="password">
-            </div>
-            <button type="submit" class="btn btn-success">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Modal Carrito Pedidos-->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            &nbsp;
+            &nbsp;
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/nipinchanicorta.html">¡Ni Pincha Ni Corta!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/contacto.html">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./pages/carta.html">CARTA</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-warning" data-toggle="modal" data-target="#crearCuenta">Crear Cuenta</button>
+                        <button class="btn btn-outline-success" data-toggle="modal" data-target="#iniciarSesion">Iniciar Sesión</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="text-center titulo">
+               <h1>Bienvenido a ¡Ni Pincha Ni Corta!</h1>
+               <button type="button" class="btn btn-primary">RESERVA AHORA</button>
+            </div>
         </div>
-        <div class="modal-body">
-          <ul id="cartItemsList"></ul>
-          Total: <span id="cartTotalPrice"></span>
-        </div>                
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+    </header>
+    <!--Modal Crear Cuenta-->
+    <div class="modal" id="crearCuenta">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crear Cuenta</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Dirección</label>
+                            <input type="text" class="form-control" id="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Teléfono</label>
+                            <input type="text" class="form-control" id="phone">
+                        </div>
+                            <button type="submit" class="btn btn-warning">Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+    <!--Modal Iniciar Sesion-->
+    <div class="modal" id="iniciarSesion">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Iniciar Sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
   </div>
-  <!--Contenedor de los Entrantes-->
-  <div class="container">
-    <h2>Entrantes</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgCroquetas.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Croquetas Variadas</h5>
-            <p class="card-text">6 coquetas a elegir entre jamón serrano, setas y queso.</p>
-            <a href="#" class="btn btn-primary" data-item-price="6.57">Añadir al pedido - 6.57€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgGambas.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Gambas al Ajillo</h5>
-            <p class="card-text">Nuestras gambas de huelva salteadas con ajos picados y guindillas.</p>
-            <a href="#" class="btn btn-primary" data-item-price="5.00">Añadir al pedido - 5.00€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgEMixta.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Ensalada Mixta</h5>
-            <p class="card-text">Una de nuestras ensaladas con verduras de la huerta, lechuga, tomate, cebolla, pimientos y aceitunas.</p>
-            <a href="#" class="btn btn-primary" data-item-price="6.90">Añadir al pedido - 6.90€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgPGallega.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Pulpo a la Gallega</h5>
-            <p class="card-text">Pulpo procedente de Galicia cocido y cortado en rodajas, aderezado con aceite de oliva, pimentón y sal gorda.</p>
-            <a href="#" class="btn btn-primary" data-item-price="5.00">Añadir al pedido - 5.00€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgEVerde.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Ensalada Verde</h5>
-            <p class="card-text">La segunda de nuestras ensaladas esta vez con una mezcla de lechuga romana, escarola y rúcula, tomate, pepino, cebolla y atún.</p>
-            <a href="#" class="btn btn-primary" data-item-price="6.90">Añadir al pedido - 6.90€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgEntremeses.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Entremeses</h5>
-            <p class="card-text">Una selección de los mejores embutidos de España como el jamón, lomo, chorizo o salchichón</p>
-            <a href="#" class="btn btn-primary" data-item-price="4.50">Añadir al pedido - 4.50€</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Contenedor de las Carnes-->
-  <div class="container">
-    <h2>Carnes</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgSolomillo.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Solomillo de Cerdo</h5>
-            <p class="card-text">Una de las partes más tiernas y jugosas del cerdo, esta vez hecho a la plancha con una guarnición de patatas.</p>
-            <a href="#" class="btn btn-primary" data-item-price="14.57">Añadir al pedido - 14.57€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgPollo.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Pollo en Salsa de Champiñones</h5>
-            <p class="card-text">Nuestro pollo de corral cocinado en una salsa de champiñones frescos con cebolla, ajo y vino blanco.</p>
-            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgChuletas.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Chuletas de Cerdo</h5>
-            <p class="card-text">Para los amantes de la carne de cerdo, tenemos nuestras chuletas a la parrilla con salsa barbacoa.</p>
-            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Contenedor de los Pescados-->
-  <div class="container">
-    <h2>Pescados</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgBacalao.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Bacalao con Tomate</h5>
-            <p class="card-text">Nuestro bacalao hecho en una salsa de tomates maduros, orégano, laurel y pimienta negra.</p>
-            <a href="#" class="btn btn-primary" data-item-price="14.57">Añadir al pedido - 14.57€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgTartar.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Tartar de Atún</h5>
-            <p class="card-text">Nuestro atún de almadraba crudo y cortado en pequeños cubos mezclado con otros ingredientes como la cebolla, aguacate, cilantro, limón y salsa de soja.</p>
-            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgSalmon.webp" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Salmón al Horno</h5>
-            <p class="card-text">Un salmon cocinado al horno aderezado con hierbas frescas acompañado de limón, ajo y aceite de oliva.</p>
-            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Contenedor de los Postres-->
-  <div class="container">
-    <h2>Postres</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgHelados.webp" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Helados Variados</h5>
-            <p class="card-text">Una selección de helados de diferentes sabores a elegir entre chocolate, vainilla o de turrón.</p>
-            <a href="#" class="btn btn-primary" data-item-price="8.57">Añadir al pedido - 8.57€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgTarta.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Tarta de Chocolate</h5>
-            <p class="card-text">Si eres un amante del chocolate esta es tu tarta, con una base de galleta y una mezcla de chocolate negro de alta calidad y crema.</p>
-            <a href="#" class="btn btn-primary" data-item-price="12.00">Añadir al pedido - 12.00€</a>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card h-100 align-items-center text-center">
-          <img src="./resources/imgSorbete.jpg" class="card-img-top" alt="Foto del plato">
-          <div class="card-body">
-            <h5 class="card-title">Sorbete de Limón</h5>
-            <p class="card-text">Nuestro último y refrescante postre con limones recién exprimidos con un poco de cava francés.</p>
-            <a href="#" class="btn btn-primary" data-item-price="13.90">Añadir al pedido - 13.90€</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    
 
-
-  
-
-  <!--Script Archivos JavaScript de Bootstrap-->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.14/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <!--Más Scripts-->
-  <script src="./javascript/carritoPedidos.js"></script>
+    <!--Script Archivos JavaScript de Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.14/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

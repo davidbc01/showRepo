@@ -1,0 +1,56 @@
+:root {
+    --mainGreen: #149545;
+    --mainRed: #F0342B;
+    --mainOrange: #F68C34;
+    --mainYellow: #FFBD4A;
+    --mainBlack: #202020;
+    --mainWhite: #F4F4F4;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif !important;
+}
+
+iframe {
+    width: 700px;
+    height: 640px;
+}
+
+/*Personalización del ScrollBar*/
+body::-webkit-scrollbar {
+    width: 15px; /*-Ancho de todo el scrollbar-*/
+}
+body::-webkit-scrollbar-track {
+    background: var(--mainBlack); /*-Color del fondo del scrollbar-*/
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--mainWhite); /*-Color del scrollbar en si-*/
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) { /*Media Queries para portátiles*/
+    
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { /*Media Queries para portátiles L*/
+    iframe {
+        width: 550px;
+        height: 440px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) { /*Media Queries para tablets*/
+    
+}
+
+@media (min-width: 376px) and (max-width: 425px) { /*Media Queries para moviles L*/
+    
+}
+
+@media (min-width: 321px)  and (max-width: 375px) { /*Media Queries para moviles M*/
+    
+}
+
+@media (max-width: 320px) { /*Media Queries para moviles S*/
+    
+}
