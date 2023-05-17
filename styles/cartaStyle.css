@@ -39,6 +39,68 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--mainWhite); /*-Color del scrollbar en si-*/
 }
 
+/*Boton volver arriba*/
+.go-top-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    z-index: -1;
+}
+
+.go-top-button {
+    background: var(--mainGreen);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.go-top-button i {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    color: #fff;
+    transition: 0.2s;
+}
+
+.show {
+    z-index: 10;
+}
+
+.show .go-top-button {
+    animation: popup 0.3s ease-in-out;
+    width: 4rem;
+    height: 4rem;
+    z-index: 11;
+}
+
+.show i {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    50% {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    100% {
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
 
 
 
